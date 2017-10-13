@@ -6,19 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
+    crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" content="text/css" href="./assets/css/style.css">
 
     <title>TheGemCollector</title>
 </head>
@@ -37,54 +30,66 @@
         <div class="row">
             <div class="col-md-6">
                 <div id="rules" class="well well-lg left-well">
-                    <div>when I have time I will write the rules
-
-                    </div>
+                    <p> You will be given a random number at the start of the game.</p>
+                    <p> There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
+                        total score.</p>
+                    <p> You win the game by matching your total score to the random number. You lose the game if your total score
+                        goes above the random number. </p>
+                    <p> Each time the game starts, the game will change the values of each crystal.</p>
                 </div>
                 <!--RandGenNumb goes here-->
                 <div class="col-md-6 text-center">
                     <div class="well">
                         <div id="RandGenNumb">
+                            <h3>Number to Guess:<span class="vaue"></span></h3>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="col-1">
-                    <img src="./assets/images/red.png">
-                </div>
-                <div class="col-1">
-                    <img src="./assets/images/blue.png">
-                </div>
-                <div class="col-1">
-                    <img src="./assets/images/green.png">
-                </div>
-                <div class="col-1">
-                    <img src="./assets/images/yellow.png">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="container">
-                    <div id="wins">Wins:</div>
-                    <div id="losses">Losses:
+                <div class="col-md-6 text-center">
+                    <div class="well">
+                        <div id="scoreboard">
+                            <h3> <span id="status"></span></h3>
+                            <h3>Wins: <span id="win"></span></h3>
+                            <h3>Losses: <span id="lose"></span></h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div id="Score">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div id="crystals"></div>
+
+                        <img id="button1" class="btn" src="./assets/images/red.png">
+
+
+                        <img id="button2" class="btn" src="./assets/images/blue.png">
+
+
+                        <img id="button3" class="btn" src="./assets/images/green.png">
+
+
+                        <img id="button4" class="btn" src="./assets/images/yellow.png">
+
+                    </div>
+                </div>
+                <div id="totalScore">
+                    <h2 id="yts">Your Total Score is: <span id="yourScore">0</span></h2>
+
+                </div>
+
             </div>
         </div>
     </div>
 
-    <script src="./assets/javascript/gemgame.js" type="text/javascript"></script>
 
+    <script src="./Assets/javascript/game.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+   
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
 </body>
 
 </html>

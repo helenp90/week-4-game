@@ -1,15 +1,76 @@
-//Ready Function set wins & losses to zero.
-$(document).ready(function(){
+$(document).ready(function() {
     
-    crystals = ['assets/images/red.png','assets/images/green.png','assets/images/blue.png','assets/images/yellow.png']
+    crystals = ['assets/images/red.png', 'assets/images/blue.png', 'assets/images/yellow.png', 'assets/images/green.png'];
 
+    var counter = 0;
+    var wins = 0;
+    var losses = 0;
+    $("#win").text(wins);
+    $("#lose").text(losses);
 
+    newCrystals();
+    newGame();
 
+    function newCrystals() {
+        var numbers = []
+        while (numbers.length < 4) {
+            var RandomNumber = Math.ceil(Math.random() * 12)
+            var found = false;
+            for (var i = 0; i < numbers.length; i++) {
+                if (numbers[i] == randomnumber) {
+                    found = true;
+                    break
+                }
+            }
+        }
+        console.log(numbers);
+
+        for (i = 0; i < numbers.length; i++) {
+            var imageCrystal = $('<img>');
+            imageCrystal.attr('data-num', numbers[i]);
+            imageCrystal.attr('div', crystals[i]);
+            imageCrystal.attr('alt', 'crystals');
+            imageCrystal.addClass('crystalImage')
+            $('#crystals').append(imageCrystal);
+        }
+    }
+
+    function newGame() {
+
+        counter = 0;
+
+        $('#yourScore').text(counter);
+
+        function randomIntFromInterval(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        var numberToGuess = randomIntFromInterval(19, 120);
+
+        $('.value').text(numberToGuess);
+
+        $('.crystalImage').on('click', function () {
+            counter = counter + parseInt($(this).data('num'));
+
+            $('#yourScore').text(counter);
+
+            if (counter == numberToGuess) {
+                $('#status').text('You win!');
+                wins++;
+                $('#win').text(wins);
+                console.log(wins)
+                $('#crystals').empty();
+                newCrystals();
+                newGame();
+            } else if (counter > numberToGuess) {
+                $('#status').text('Bummer dude.')
+                losses++;
+                $('#lose').text(losses);
+                console.log(losses);
+                $('crystals').empty();
+                newCrystals();
+                newGame();
+            }
+        });
+    }
 })
-//RandomNumber is generated 19-120
-//Four gems that have random numbers assigned to them 1-12
-//click the gem to generate points based on the assigned numbers
-//numbers add up at the bottom
-//If you get the exact number you win
-//win will be tallied
-//If you can't add up to the exact number you lose.
