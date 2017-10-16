@@ -1,6 +1,6 @@
 $(document).ready(function() {
     
-    crystals = ['assets/images/red.png', 'assets/images/blue.png', 'assets/images/yellow.png', 'assets/images/green.png'];
+    crystals = ['#button1','#button2', '#button3', '#button4'];
 
     var counter = 0;
     var wins = 0;
@@ -12,28 +12,42 @@ $(document).ready(function() {
     newGame();
 
     function newCrystals() {
-        var numbers = []
-        while (numbers.length < 4) {
-            var RandomNumber = Math.ceil(Math.random() * 12)
-            var found = false;
-            for (var i = 0; i < numbers.length; i++) {
-                if (numbers[i] == randomnumber) {
-                    found = true;
-                    break
-                }
-            }
-        }
-        console.log(numbers);
+        
+              while (numbers.length < 4) {
+                  var RandomNumber = Math.ceil(Math.random() * 12)
+                  }
+              console.log(numbers);
+      }
 
+
+        
         for (i = 0; i < numbers.length; i++) {
-            var imageCrystal = $('<img>');
-            imageCrystal.attr('data-num', numbers[i]);
-            imageCrystal.attr('div', crystals[i]);
-            imageCrystal.attr('alt', 'crystals');
-            imageCrystal.addClass('crystalImage')
-            $('#crystals').append(imageCrystal);
+            var redGem = $('#button1');
+            redGem.attr('data-num', numbers[i]);
+            redGem.attr('alt', 'crystals');
+            redGem.addClass('crystalImage')
+            $('#crystals').append(redGem);
+
+            var blueGem = $('#button2');
+            blueGem.attr('data-num', numbers[i]);
+            blueGem.attr('alt', 'crystals');
+            blueGem.addClass('crystalImage')
+            $('#crystals').append(blueGem);
+
+            var greenGem = $('#button3');
+            greenGem.attr('data-num', numbers[i]);
+            greenGem.attr('alt', 'crystals');
+            greenGem.addClass('crystalImage')
+            $('#crystals').append(greenGem);
+
+            var yellowGem = $('#button4');
+            yellowGem.attr('data-num', numbers[i]);
+            yellowGem.attr('alt', 'crystals');
+            yellowGem.addClass('crystalImage')
+            $('#crystals').append(yellowGem);
+
         }
-    }
+    },
 
     function newGame() {
 
@@ -72,5 +86,4 @@ $(document).ready(function() {
                 newGame();
             }
         });
-    }
-})
+    })

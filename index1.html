@@ -1,47 +1,77 @@
-<!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Crystal Collectors</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <title>GemGameJava</title>
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  </head>
+  <title>TheGemCollector</title>
 </head>
 
 <body>
-
-    <div id="wrapper">
-
-        <h1><span>Crystal Collectors!<span></h1>
-
-	<div id="instructions">
-		<p> You will be given a random number at the start of the game.</p>
-		<p> There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
-		<p> You win the game by matching your total score to the random number. You lose the game if your total score goes above the random number. </p>
-		<p> Each time the game starts, the game will change the values of each crystal.</p>
-	</div>
-
-	<div class = "container">
-		<div id="guessingNumber">
-			<h2>Number to Guess: <span class="value"></span></h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">The Gem Collector</h1>
+            </div>
+        </div>
     </div>
+    <br>
+    </br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="rules" class="well well-lg left-well">
+                    <p> You will be given a random number at the start of the game.</p>
+                    <p> There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
+                        total score.</p>
+                    <p> You win the game by matching your total score to the random number. You lose the game if your total score
+                        goes above the random number. </p>
+                    <p> Each time the game starts, the game will change the values of each crystal.</p>
+                </div>
+                <!--RandGenNumb goes here-->
+                <div class="col-md-6 text-center">
+                    <div class="well">
+                        <div id="RandGenNumb">
+                            <h3>Number to Guess:<span class="vaue"></span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="well">
+                        <div id="scoreboard">
+                            <h3> <span id="status"></span></h3>
+                            <h3>Wins: <span id="win"></span></h3>
+                            <h3>Losses: <span id="lose"></span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div id="crystals"></div>
 
-    <div id="scoreboard">
-        <h3><span id="status"></span></h3>
-        <h3>Wins: <span id="win"></span></h3>
-        <h3>Losses: <span id="loss"></span> </h3>
-    </div>
-    </div>
+                        <img id="button1" class="btn" src="./assets/images/red.png">
 
 
-    <div id="crystals"></div>
+                        <img id="button2" class="btn" src="./assets/images/blue.png">
 
-    <div id="totalScore">
-        <h2 id="yts">Your Total Score is: <span id="yourScore">0</span></h2>
 
-    </div>
+                        <img id="button3" class="btn" src="./assets/images/green.png">
 
+
+                        <img id="button4" class="btn" src="./assets/images/yellow.png">
+
+                    </div>
+                </div>
+                <div id="totalScore">
+                    <h2 id="yts">Your Total Score is: <span id="yourScore">0</span></h2>
+
+                </div>
+
+            </div>
+        </div>
     </div>
     <script src="./Assets/javascript/gemgamejava.js" type="text/javascript"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-</body>
-
-</html>
+    
