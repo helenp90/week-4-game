@@ -1,6 +1,6 @@
 $(document).ready(function() {
     
-    crystals = ['#button1','#button2', '#button3', '#button4'];
+    gems = ['#button1','#button2', '#button3', '#button4'];
 
     var counter = 0;
     var wins = 0;
@@ -12,6 +12,7 @@ $(document).ready(function() {
     newGame();
 
     function newCrystals() {
+        var numbers= gems
         
               while (numbers.length < 4) {
                   var RandomNumber = Math.ceil(Math.random() * 12)
