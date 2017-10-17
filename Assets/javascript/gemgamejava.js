@@ -1,27 +1,27 @@
-$(document).ready(function() {
-    
-    gems = ['#button1','#button2', '#button3', '#button4'];
+$(document).ready(function () {
 
-    var counter = 0;
-    var wins = 0;
-    var losses = 0;
-    $("#win").text(wins);
-    $("#lose").text(losses);
+        gems = ['#button1', '#button2', '#button3', '#button4'];
 
-    newCrystals();
-    newGame();
+        var counter = 0;
+        var wins = 0;
+        var losses = 0;
+        $("#win").text(wins);
+        $("#lose").text(losses);
 
-    function newCrystals() {
-        var numbers= gems
-        
-              while (numbers.length < 4) {
-                  var RandomNumber = Math.ceil(Math.random() * 12)
-                  }
-              console.log(numbers);
-      }
+        newCrystals();
+        newGame();
+
+        function newCrystals() {
+            var numbers = gems
+
+            while (numbers.length < 4) {
+                var RandomNumber = Math.ceil(Math.random() * 12)
+            }
+            console.log(numbers);
+        }
 
 
-        
+
         for (i = 0; i < numbers.length; i++) {
             var redGem = $('#button1');
             redGem.attr('data-num', numbers[i]);
@@ -61,30 +61,43 @@ $(document).ready(function() {
         }
 
         var numberToGuess = randomIntFromInterval(19, 120);
+        console.log(numberToGuess);
 
         $('.value').text(numberToGuess);
 
-        $('.crystalImage').on('click', function () {
+        $('#button1').on('click', function () {
             counter = counter + parseInt($(this).data('num'));
+        })
 
-            $('#yourScore').text(counter);
+        $('#button2').on('click', function () {
+            counter = counter + parseInt($(this).data('num'));
+        })
 
-            if (counter == numberToGuess) {
-                $('#status').text('You win!');
-                wins++;
-                $('#win').text(wins);
-                console.log(wins)
-                $('#crystals').empty();
-                newCrystals();
-                newGame();
-            } else if (counter > numberToGuess) {
-                $('#status').text('Bummer dude.')
-                losses++;
-                $('#lose').text(losses);
-                console.log(losses);
-                $('crystals').empty();
-                newCrystals();
-                newGame();
-            }
-        });
-    })
+        $('#button3').on('click', function () {
+            counter = counter + parseInt($(this).data('num'));
+        })
+
+        $('#button4').on('click', function () {
+            counter = counter + parseInt($(this).data('num'));
+        })
+
+        $('#yourScore').text(counter)
+
+        if (counter == numberToGuess) {
+            $('#status').text('You win!');
+            wins++;
+            $('#win').text(wins);
+            console.log(wins)
+            $('#crystals').empty();
+            newCrystals();
+            newGame();
+        } else if (counter > numberToGuess) {
+            $('#status').text('Bummer dude.')
+            losses++;
+            $('#lose').text(losses);
+            console.log(losses);
+            $('crystals').empty();
+            newCrystals();
+            newGame();
+        }
+    });
