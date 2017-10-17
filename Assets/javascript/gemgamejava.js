@@ -20,7 +20,7 @@ $(document).ready(function () {
             console.log(numbers);
         }
 
-
+//Assigning random values to each crystal.
 
         for (i = 0; i < numbers.length; i++) {
             var redGem = $('#button1');
@@ -50,6 +50,8 @@ $(document).ready(function () {
         }
     },
 
+//Running a new game.
+
     function newGame() {
 
         counter = 0;
@@ -58,7 +60,7 @@ $(document).ready(function () {
 
         function randomIntFromInterval(min, max) {
             return Math.floor(Math.random() * (max - min + 1) + min);
-        }
+        };
 
         var numberToGuess = randomIntFromInterval(19, 120);
         console.log(numberToGuess);
