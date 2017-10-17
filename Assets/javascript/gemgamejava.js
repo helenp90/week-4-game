@@ -1,26 +1,26 @@
 $(document).ready(function () {
 
-        gems = ['#button1', '#button2', '#button3', '#button4'];
+    gems = ['#button1', '#button2', '#button3', '#button4'];
 
-        var counter = 0;
-        var wins = 0;
-        var losses = 0;
-        $("#win").text(wins);
-        $("#lose").text(losses);
+    var counter = 0;
+    var wins = 0;
+    var losses = 0;
+    $("#win").text(wins);
+    $("#lose").text(losses);
 
-        newCrystals();
-        newGame();
+    newCrystals();
+    newGame();
 
-        function newCrystals() {
-            var numbers = gems
+    function newCrystals() {
+        var numbers = gems
 
-            while (numbers.length < 4) {
-                var RandomNumber = Math.ceil(Math.random() * 12)
-            }
-            console.log(numbers);
+        while (numbers.length < 4) {
+            var RandomNumber = Math.ceil(Math.random() * 12)
         }
+        console.log(numbers);
 
-//Assigning random values to each crystal.
+
+        //Assigning random values to each crystal.
 
         for (i = 0; i < numbers.length; i++) {
             var redGem = $('#button1');
@@ -48,9 +48,9 @@ $(document).ready(function () {
             $('#crystals').append(yellowGem);
 
         }
-    },
+    }
 
-//Running a new game.
+    //Running a new game.
 
     function newGame() {
 
@@ -102,4 +102,5 @@ $(document).ready(function () {
             newCrystals();
             newGame();
         }
-    });
+    }
+});
