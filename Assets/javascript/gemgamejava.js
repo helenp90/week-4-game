@@ -15,7 +15,7 @@ $(document).ready(function () {
         var numbers = []
 
         while (numbers.length < 4) {
-            var RandomNumber = Math.ceil(Math.random() * 12) 
+            var RandomNumber = Math.ceil(Math.random() * 12)
             numbers.push(RandomNumber)
         }
         console.log(numbers);
@@ -26,22 +26,18 @@ $(document).ready(function () {
         for (i = 0; i < numbers.length; i++) {
             var redGem = $('#button1');
             redGem.attr('data-num', numbers[i]);
-            redGem.attr('alt', 'crystals');
             $('#button1').append(redGem);
 
             var blueGem = $('#button2');
             blueGem.attr('data-num', numbers[i]);
-            blueGem.attr('alt', 'crystals');
             $('#button2').append(blueGem);
 
             var greenGem = $('#button3');
             greenGem.attr('data-num', numbers[i]);
-            greenGem.attr('alt', 'crystals');
             $('#button3').append(greenGem);
 
             var yellowGem = $('#button4');
-            yellowGem.attr('data-num', numbers[i]);
-            yellowGem.attr('alt', 'crystals');
+            yellowGem.attr('data-num', numbers[i]); 
             $('#button4').append(yellowGem);
 
         }
@@ -67,7 +63,6 @@ $(document).ready(function () {
         $('#button1').on('click', function () {
             counter = counter + parseInt($(this).data('num'));
             $('#yourScore').text(counter)
-            console.log (counter);
         })
 
         $('#button2').on('click', function () {
