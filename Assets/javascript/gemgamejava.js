@@ -18,27 +18,31 @@ $(document).ready(function () {
             var RandomNumber = Math.ceil(Math.random() * 12)
             numbers.push(RandomNumber)
         }
-        console.log(numbers);
+        console.log(numbers)
 
 
         //Assigning random values to each crystal.
 
         for (i = 0; i < numbers.length; i++) {
             var redGem = $('#button1');
-            redGem.attr('data-num', numbers[i]);
+            redGem.attr('data-num', numbers[0]);
             $('#button1').append(redGem);
+            console.log(numbers[i])
 
             var blueGem = $('#button2');
-            blueGem.attr('data-num', numbers[i]);
+            blueGem.attr('data-num', numbers[1]);
             $('#button2').append(blueGem);
+            console.log(numbers[i])
 
             var greenGem = $('#button3');
-            greenGem.attr('data-num', numbers[i]);
+            greenGem.attr('data-num', numbers[2]);
             $('#button3').append(greenGem);
+            console.log(numbers[i])
 
             var yellowGem = $('#button4');
-            yellowGem.attr('data-num', numbers[i]); 
+            yellowGem.attr('data-num', numbers[3]);
             $('#button4').append(yellowGem);
+            console.log(numbers[i])
 
         }
     }
@@ -46,6 +50,7 @@ $(document).ready(function () {
     //Running a new game.
 
     function newGame() {
+        rungame();        
 
         counter = 0;
 
@@ -58,7 +63,7 @@ $(document).ready(function () {
         var numberToGuess = randomIntFromInterval(19, 120);
         console.log(numberToGuess);
 
-        $('.value').text(numberToGuess);
+        $('.value').html(numberToGuess);
 
         $('#button1').on('click', function () {
             counter = counter + parseInt($(this).data('num'));
@@ -79,25 +84,25 @@ $(document).ready(function () {
             counter = counter + parseInt($(this).data('num'));
             $('#yourScore').text(counter)
         })
-
-        $('#yourScore').text(counter)
-
-        if (counter == numberToGuess) {
-            $('#status').text('You win!');
-            wins++;
-            $('#win').text(wins);
-            console.log(wins)
-            $('#crystals').empty();
-            newCrystals();
-            newGame();
-        } else if (counter > numberToGuess) {
-            $('#status').text('Bummer dude.')
-            losses++;
-            $('#lose').text(losses);
-            console.log(losses);
-            $('crystals').empty();
-            newCrystals();
-            newGame();
+        function rungame() {
+            if (counter == numberToGuess) {
+                $('#status').text('You win!');
+                wins++;
+                $('#win').text(wins);
+                console.log(wins)
+                $('#crystals').empty();
+                newCrystals();
+                newGame();
+            } else if (counter > numberToGuess) {
+                $('#status').text('Bummer dude.')
+                losses++;
+                $('#lose').text(losses);
+                console.log(losses);
+                $('crystals').empty();
+                newCrystals();
+                newGame();
+            }
         }
     }
+    
 });
