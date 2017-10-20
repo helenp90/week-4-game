@@ -67,22 +67,26 @@ $(document).ready(function () {
 
         $('#button1').on('click', function () {
             counter = counter + parseInt($(this).data('num'));
-            $('#yourScore').text(counter)
+            $('#yourScore').text(counter);
+            rungame();
         })
 
         $('#button2').on('click', function () {
             counter = counter + parseInt($(this).data('num'));
-            $('#yourScore').text(counter)
+            $('#yourScore').text(counter);
+            rungame();
         })
 
         $('#button3').on('click', function () {
             counter = counter + parseInt($(this).data('num'));
-            $('#yourScore').text(counter)
+            $('#yourScore').text(counter);
+            rungame();
         })
 
         $('#button4').on('click', function () {
             counter = counter + parseInt($(this).data('num'));
-            $('#yourScore').text(counter)
+            $('#yourScore').text(counter);
+            rungame();
         })
         function rungame() {
             if (counter == numberToGuess) {
